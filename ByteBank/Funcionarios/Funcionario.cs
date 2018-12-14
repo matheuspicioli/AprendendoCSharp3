@@ -4,28 +4,28 @@ using System.Text;
 
 namespace ByteBank.Funcionarios
 {
-    public class Funcionario
+    public abstract class Funcionario
     {
-        private int _tipo;
         public string Nome { get; set; }
         public string CPF { get; set; }
-        public double Salario { get; set; }
+        public double Salario { get; protected set; }
 
-        public double GetBonificacao()
+        public Funcionario(double salario, string cpf)
         {
-            return Salario * 0.10;
+            this.CPF = cpf;
+            this.Salario = salario;
+            Console.WriteLine("Criando um FUNCIONARIO");
         }
 
-        public Funcionario(int tipo)
+        public virtual void AumentarSalario()
         {
-            this._tipo = tipo;
+            // Salario = Salario + (Salario * 0.1);
+            // Salario = Salario * 1.1;
+            this.Salario *= 1.1;
         }
 
-        public double GetBonificacao(int tipo)
+        public virtual double GetBonificacao()
         {
-            if (_tipo == 1)
-                return this.Salario;
-
             return this.Salario * 0.10;
         }
     }
