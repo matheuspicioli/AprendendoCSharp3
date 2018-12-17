@@ -8,17 +8,17 @@ namespace ByteBank.Funcionarios
     {
         public Auxiliar(string cpf): base(2000, cpf)
         {
-
+            Console.WriteLine("Criando AUXILIAR");
         }
 
         public override void AumentarSalario()
         {
-            this.Salario *= 1.10;
+            Salario *= 1.10;
         }
 
         public override double GetBonificacao()
         {
-            return this.Salario * 0.20;
+            return Salario * 0.20;
         }
     }
 }

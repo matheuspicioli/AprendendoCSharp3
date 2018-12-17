@@ -1,24 +1,25 @@
-﻿using System;
+﻿using ByteBank.Sistemas;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace ByteBank.Funcionarios
 {
-    public class GerenteDeConta: Funcionario
+    public class GerenteDeConta: FuncionarioAutenticavel
     {
         public GerenteDeConta(string cpf): base(4000, cpf)
         {
-
+            Console.WriteLine("Criando GERENTE DE CONTA");
         }
 
         public override void AumentarSalario()
         {
-            this.Salario *= 0.05;
+            Salario *= 0.05;
         }
 
         public override double GetBonificacao()
         {
-            return this.Salario * 0.25;
+            return Salario * 0.25;
         }
     }
 }

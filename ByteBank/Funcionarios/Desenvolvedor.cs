@@ -4,21 +4,20 @@ using System.Text;
 
 namespace ByteBank.Funcionarios
 {
-    public class Designer: Funcionario
+    public class Desenvolvedor: Funcionario
     {
-        public Designer(string cpf): base(3000, cpf)
+        public Desenvolvedor(string cpf) : base(3000, cpf)
         {
-            Console.WriteLine("Criando DESIGNER");
         }
 
         public override void AumentarSalario()
         {
-            Salario *= 1.11;
+            Salario *= 1.15;
         }
 
         public override double GetBonificacao()
         {
-            return Salario * 0.17;
+            return Salario * 0.10;
         }
     }
 }
